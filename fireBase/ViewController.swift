@@ -18,6 +18,16 @@ class ViewController: UIViewController {
         view.layer.masksToBounds = true
         return view
     }()
+    
+    let registerButton: UIButton = { //el closure es por que se crea la instancia del objeto y se asigna a la variable
+        let btn = UIButton(type: .system)
+        btn.backgroundColor = UIColor(red: 232/255, green: 173/255, blue: 72/255, alpha: 1.0)
+        btn.translatesAutoresizingMaskIntoConstraints = false //para poder usar los constraints
+        btn.setTitleColor(UIColor.white, for: .normal)
+        btn.setTitle("Registro", for: .normal)
+        return btn
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +38,17 @@ class ViewController: UIViewController {
     
     func setupLayout(){
         view.addSubview(formContainerView)
+        view.addSubview(registerButton)
+
         formContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         formContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         formContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -20).isActive = true
         formContainerView.heightAnchor.constraint(equalToConstant: 180).isActive = true
         
-        
+        registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        registerButton.centerYAnchor.constraint(equalTo: formContainerView.bottomAnchor, constant: 50).isActive = true
+        registerButton.widthAnchor.constraint(equalTo: formContainerView.widthAnchor).isActive = true
+        registerButton.heightAnchor.constraint(equalToConstant: 50)
     }
 
 }
