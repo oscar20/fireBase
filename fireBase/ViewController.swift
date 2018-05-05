@@ -9,8 +9,11 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import FirebaseDatabase
 
 class ViewController: UIViewController {
+    
+    var ref : DatabaseReference! //! para no inicializarla
     
     let formContainerView: UIView = {
         let view = UIView()
@@ -77,6 +80,8 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor(red: 30/255, green: 62/255, blue: 106/255, alpha: 1.0)
         
         setupLayout()
+        
+        ref = Database.database().reference()
     }
     
     func setupLayout(){
@@ -143,6 +148,16 @@ class ViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                 if user != nil {
                     print("Se creo el usuario")
+                    let values = ["name": email] //Se agrego para el database
+                    self.ref.updateChildValues(values, withCompletionBlock: { (error, ref) in
+                        if error != nil{
+                            print("Error al insertar datos")
+                            return
+                        }else{
+                            print("Dato guardado en la BD")
+                        }
+                    })
+                    
                 }else{
                     if let error = error?.localizedDescription{
                         print("Error al crear usuario por firebase \(error)")

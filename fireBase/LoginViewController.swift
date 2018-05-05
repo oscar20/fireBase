@@ -21,8 +21,8 @@ class LoginViewController: UIViewController {
     
     @objc func logoutUser(){
         do{
-            try Auth.auth().signOut()
-            self.navigationController?.popViewController(animated: true)
+            try Auth.auth().signOut() //salir de la autenticacion
+            self.navigationController?.popViewController(animated: true) //al salir quito la vista con un pop
             print("Saliendo...")
         }catch{
             print("Error...")
