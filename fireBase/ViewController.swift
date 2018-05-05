@@ -126,6 +126,8 @@ class ViewController: UIViewController {
             Auth.auth().signIn(withEmail: email,password: password) { (user, error) in
                 if user != nil {
                     print("Usuario autenticado")
+                    let lc = LoginViewController()
+                    self.navigationController?.pushViewController(lc, animated: true)
                 }else{
                     if let error = error?.localizedDescription{
                         print("Error al iniciar session por firebase \(error)")
