@@ -122,7 +122,19 @@ class ViewController: UIViewController {
     }
     
     func loginUser(){
-        
+        if let email = emailTextField.text, let password = passwordTextField.text{
+            Auth.auth().signIn(withEmail: email,password: password) { (user, error) in
+                if user != nil {
+                    print("Usuario autenticado")
+                }else{
+                    if let error = error?.localizedDescription{
+                        print("Error al iniciar session por firebase \(error)")
+                    }else{
+                        print("Tu eres el error en sesion..")
+                    }
+                }
+            }
+        }
     }
     func registerUser(){
         if let email = emailTextField.text, let password = passwordTextField.text{
