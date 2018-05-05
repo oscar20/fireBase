@@ -25,7 +25,30 @@ class ViewController: UIViewController {
         btn.translatesAutoresizingMaskIntoConstraints = false //para poder usar los constraints
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.setTitle("Registro", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        btn.layer.cornerRadius = 5
+        btn.layer.masksToBounds = true
+        
         return btn
+    }()
+    
+    
+    let emailTextField : UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "Correo electronico"
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
+        
+    }()
+    
+    let passwordTextField : UITextField = {
+        let pf = UITextField()
+        pf.placeholder = "Password"
+        pf.translatesAutoresizingMaskIntoConstraints = false
+        pf.isSecureTextEntry = true
+        
+        return pf
+        
     }()
     
 
@@ -39,16 +62,30 @@ class ViewController: UIViewController {
     func setupLayout(){
         view.addSubview(formContainerView)
         view.addSubview(registerButton)
+        formContainerView.addSubview(emailTextField)
+        formContainerView.addSubview(passwordTextField)
 
         formContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         formContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         formContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -20).isActive = true
-        formContainerView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        formContainerView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         
         registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         registerButton.centerYAnchor.constraint(equalTo: formContainerView.bottomAnchor, constant: 50).isActive = true
         registerButton.widthAnchor.constraint(equalTo: formContainerView.widthAnchor).isActive = true
-        registerButton.heightAnchor.constraint(equalToConstant: 50)
+        registerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        emailTextField.leftAnchor.constraint(equalTo: formContainerView.leftAnchor,constant: 10).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: formContainerView.topAnchor).isActive = true
+        emailTextField.widthAnchor.constraint(equalTo: formContainerView.widthAnchor).isActive = true
+        emailTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        passwordTextField.leftAnchor.constraint(equalTo: formContainerView.leftAnchor, constant: 10).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor).isActive = true
+        passwordTextField.widthAnchor.constraint(equalTo: formContainerView.widthAnchor).isActive = true
+        passwordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        
     }
 
 }
