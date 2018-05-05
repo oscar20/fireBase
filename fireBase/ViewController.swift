@@ -56,8 +56,16 @@ class ViewController: UIViewController {
         sg.translatesAutoresizingMaskIntoConstraints = false
         sg.selectedSegmentIndex = 1
         sg.tintColor = UIColor.white
+        sg.addTarget(self, action: #selector(segmentedChange), for: .valueChanged) //el que hará la toma de decision
+        
         return sg
     }()
+    
+    //Funcion para cambio de valor
+    @objc func segmentedChange(){
+        let title = formSegmentedControl.titleForSegment(at: formSegmentedControl.selectedSegmentIndex) //me dice que elemento fue seleccionado
+        registerButton.setTitle(title, for: .normal)
+    }
     
 
     override func viewDidLoad() {
