@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseAuth
 
 class ViewController: UIViewController {
     
@@ -28,6 +30,8 @@ class ViewController: UIViewController {
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         btn.layer.cornerRadius = 5
         btn.layer.masksToBounds = true
+        
+        btn.addTarget(self, action: #selector(loginRegister), for: .touchUpInside) //el que hará la toma de decision
         
         return btn
     }()
@@ -107,6 +111,33 @@ class ViewController: UIViewController {
         formSegmentedControl.widthAnchor.constraint(equalTo: formContainerView.widthAnchor).isActive = true
         formSegmentedControl.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
+    }
+    
+    @objc func loginRegister(){
+        if formSegmentedControl.selectedSegmentIndex == 0{
+            loginUser()
+        }else{
+            registerUser()
+        }
+    }
+    
+    func loginUser(){
+        
+    }
+    func registerUser(){
+        if let email = emailTextField.text, let password = passwordTextField.text{
+            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+                if user != nil {
+                    print("Se creo el usuario")
+                }else{
+                    if let error = error?.localizedDescription{
+                        print("Error al crear usuario por firebase \(error)")
+                    }else{
+                        print("Tu eres el error..")
+                    }
+                }
+            }
+        }
     }
 
 }

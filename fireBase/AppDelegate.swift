@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import FirebaseCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = ViewController()
         
         window?.rootViewController = UINavigationController(rootViewController: vc)
+        
+        FirebaseApp.configure()
         
         return true
     }
