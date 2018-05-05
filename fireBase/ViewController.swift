@@ -51,6 +51,14 @@ class ViewController: UIViewController {
         
     }()
     
+    let formSegmentedControl: UISegmentedControl = {
+        let sg = UISegmentedControl(items: ["Login","Register"])
+        sg.translatesAutoresizingMaskIntoConstraints = false
+        sg.selectedSegmentIndex = 1
+        
+        return sg
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +70,7 @@ class ViewController: UIViewController {
     func setupLayout(){
         view.addSubview(formContainerView)
         view.addSubview(registerButton)
+        view.addSubview(formSegmentedControl)
         formContainerView.addSubview(emailTextField)
         formContainerView.addSubview(passwordTextField)
 
@@ -85,6 +94,10 @@ class ViewController: UIViewController {
         passwordTextField.widthAnchor.constraint(equalTo: formContainerView.widthAnchor).isActive = true
         passwordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
+        formSegmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        formSegmentedControl.bottomAnchor.constraint(equalTo: formContainerView.topAnchor, constant: -15).isActive = true
+        formSegmentedControl.widthAnchor.constraint(equalTo: formContainerView.widthAnchor).isActive = true
+        formSegmentedControl.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
     }
 
