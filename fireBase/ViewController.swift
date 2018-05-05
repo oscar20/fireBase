@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         let sg = UISegmentedControl(items: ["Login","Register"])
         sg.translatesAutoresizingMaskIntoConstraints = false
         sg.selectedSegmentIndex = 1
-        
+        sg.tintColor = UIColor.white
         return sg
     }()
     
