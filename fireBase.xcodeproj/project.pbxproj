@@ -12,6 +12,8 @@
 		3DE3CC2C209E0BFF002436B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3CC2A209E0BFF002436B2 /* Main.storyboard */; };
 		3DE3CC2E209E0C00002436B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3CC2D209E0C00002436B2 /* Assets.xcassets */; };
 		3DE3CC31209E0C00002436B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3CC2F209E0C00002436B2 /* LaunchScreen.storyboard */; };
+		3DE3CC39209E2424002436B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3CC38209E2424002436B2 /* GoogleService-Info.plist */; };
+		AE3E47AC4AE06B8CCA84B918 /* Pods_fireBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1078D83D2E45F0A1151B09 /* Pods_fireBase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		3DE3CC2D209E0C00002436B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DE3CC30209E0C00002436B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DE3CC32209E0C00002436B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DE3CC38209E2424002436B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3E5AFE249F6F0608EDB2DFD6 /* Pods-fireBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fireBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-fireBase/Pods-fireBase.release.xcconfig"; sourceTree = "<group>"; };
+		CF3AE6B0CA7A2ED380E744E3 /* Pods-fireBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fireBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fireBase/Pods-fireBase.debug.xcconfig"; sourceTree = "<group>"; };
+		EA1078D83D2E45F0A1151B09 /* Pods_fireBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fireBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3E47AC4AE06B8CCA84B918 /* Pods_fireBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23578E4D407916D0E335D3A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA1078D83D2E45F0A1151B09 /* Pods_fireBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3DE3CC1A209E0BFF002436B2 = {
 			isa = PBXGroup;
 			children = (
 				3DE3CC25209E0BFF002436B2 /* fireBase */,
 				3DE3CC24209E0BFF002436B2 /* Products */,
+				BBEF5AC0FBF1C20D579A1311 /* Pods */,
+				23578E4D407916D0E335D3A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +77,18 @@
 				3DE3CC2D209E0C00002436B2 /* Assets.xcassets */,
 				3DE3CC2F209E0C00002436B2 /* LaunchScreen.storyboard */,
 				3DE3CC32209E0C00002436B2 /* Info.plist */,
+				3DE3CC38209E2424002436B2 /* GoogleService-Info.plist */,
 			);
 			path = fireBase;
+			sourceTree = "<group>";
+		};
+		BBEF5AC0FBF1C20D579A1311 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF3AE6B0CA7A2ED380E744E3 /* Pods-fireBase.debug.xcconfig */,
+				3E5AFE249F6F0608EDB2DFD6 /* Pods-fireBase.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DE3CC35209E0C00002436B2 /* Build configuration list for PBXNativeTarget "fireBase" */;
 			buildPhases = (
+				CD17C26D9AA878374FB50B07 /* [CP] Check Pods Manifest.lock */,
 				3DE3CC1F209E0BFF002436B2 /* Sources */,
 				3DE3CC20209E0BFF002436B2 /* Frameworks */,
 				3DE3CC21209E0BFF002436B2 /* Resources */,
+				E50E6BAC8DA25EA334D492B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,12 +152,58 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE3CC31209E0C00002436B2 /* LaunchScreen.storyboard in Resources */,
+				3DE3CC39209E2424002436B2 /* GoogleService-Info.plist in Resources */,
 				3DE3CC2E209E0C00002436B2 /* Assets.xcassets in Resources */,
 				3DE3CC2C209E0BFF002436B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CD17C26D9AA878374FB50B07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fireBase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E50E6BAC8DA25EA334D492B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-fireBase/Pods-fireBase-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fireBase/Pods-fireBase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3DE3CC1F209E0BFF002436B2 /* Sources */ = {
@@ -278,14 +353,12 @@
 		};
 		3DE3CC36209E0C00002436B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF3AE6B0CA7A2ED380E744E3 /* Pods-fireBase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = fireBase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.diplomado.fireBase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -295,14 +368,12 @@
 		};
 		3DE3CC37209E0C00002436B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E5AFE249F6F0608EDB2DFD6 /* Pods-fireBase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = fireBase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.diplomado.fireBase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
