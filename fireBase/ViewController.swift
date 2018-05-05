@@ -9,17 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let formContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 5
+        view.layer.masksToBounds = true
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = UIColor(red: 30/255, green: 62/255, blue: 106/255, alpha: 1.0)
+        
+        setupLayout()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setupLayout(){
+        view.addSubview(formContainerView)
+        formContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        formContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        formContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -20).isActive = true
+        formContainerView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        
+        
     }
-
 
 }
 
